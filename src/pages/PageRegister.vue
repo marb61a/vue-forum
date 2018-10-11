@@ -27,6 +27,34 @@
             type="text"
             class="form-input"
           >
+          <template v-if="$v.form.username.$error">
+            <span v-if="!$v.form.name.required" class="form-error">
+              This is a required field
+            </span>
+            <span v-if="!$v.form.username.unique" class="form-error">
+              This username has been taken
+            </span>
+          </template>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            v-model.lazy="form.email"
+            @blur="$v.form.email.$touch()"
+            id="email"
+            class="form-input"
+          >
+          <template v-if="$v.form.email.$error">
+            <span v-if="!$v.form.email.required" class="form-error">
+              This field is required
+            </span>
+            <span v-else-if="!$v.form.email.email" class="form-error">
+              This in not a valid email address
+            </span>
+            <span v-else-if="!$v.form.email.unique" class="form-error">
+              Sorry! This email is taken
+            </span>
+          </template>
         </div>
         <div class="form-actions">
           <button type="submit" class="btn-blue btn-block">
@@ -34,9 +62,10 @@
           </button>
         </div>
       </form>
-      <div text-center push-top>
-        <button>
-
+      <div class="text-center push-top">
+        <button @click="registerWithGoogle" class="btn-red btn-xsmall">
+          <i class="fa fa-google fa-btn"></i>
+          Sign Up With Google
         </button>
       </div>
     </div>
