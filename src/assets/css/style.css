@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body {
+    background-color: #F6F8FF;
+    min-height: 100vh;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 240px) and (max-width: 1023px) {
+    html {
+        font-size: 14px;
+    }
+}
