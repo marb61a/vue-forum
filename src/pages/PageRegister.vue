@@ -56,6 +56,36 @@
             </span>
           </template>
         </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            v-model="form.password"
+            @blur="$v.form.password.$touch()"
+            id="password"
+            type="password"
+            class="form-input"
+          >
+          <template>
+            <span>
+
+            </span>
+          </template>
+        </div>
+        <div class="form-group">
+          <label for="avatar">Avatar</label>
+          <input
+            v-model.lazy="form.avatar"
+            @blur="$v.form.avatar.$touch()"
+            id="avatar"
+            type="text"
+            class="form-input"
+          >
+          <template>
+            <span>
+
+            </span>
+          </template>
+        </div>
         <div class="form-actions">
           <button type="submit" class="btn-blue btn-block">
             Register
