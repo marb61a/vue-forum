@@ -166,6 +166,9 @@
           .then(() => this.successRedirect())
       },
 
+    },
+    created () {
+      this.$emit('ready')
     }
   }
 </script>
