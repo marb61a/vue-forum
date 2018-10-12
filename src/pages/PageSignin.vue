@@ -6,14 +6,28 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input
-
+            v-model="form.email"
+            @blur="$v.form.email.$touch()"
+            id="email"
+            type="text"
+            class="form-input"
           >
+          <template>
+
+          </template>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input
-
+            v-model="form.password"
+            @blur="$v.form.password.$touch()"
+            id="password"
+            type="password"
+            class="form-input"
           >
+          <template>
+
+          </template>
         </div>
       </form>
     </div>
@@ -29,6 +43,23 @@
           email: null,
           password: null
         }
+      }
+    },
+    validations: {
+      form: {
+        email: {
+          required,
+          email
+        },
+        password: {
+          required,
+          minLength: minLength(6)
+        }
+      }
+    },
+    methods: {
+      signIn () {
+
       }
     }
   }
