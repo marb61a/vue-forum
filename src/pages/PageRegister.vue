@@ -65,9 +65,12 @@
             type="password"
             class="form-input"
           >
-          <template>
-            <span>
-
+          <template v-if="$v.form.password.$error">
+            <span v-if="!$v.form.password.required" class="form-error">
+              This field is required
+            </span>
+            <span v-if="!$v.form.password.minLength" class="form-error">
+              The password must be at least 6 characters long
             </span>
           </template>
         </div>
@@ -80,9 +83,16 @@
             type="text"
             class="form-input"
           >
-          <template>
-            <span>
-
+          <template v-if="$v.form.avatar.$error">
+            <span v-if="!$v.form.avatar.url" class="form-error">
+              The supplied URL is invalid
+            </span>
+            <span v-else-if="!$v.form.avatar.supportedImageFile" class="form-error">
+              This file type is not supported by our system.
+              Supported file types are: .jpg, .png, .gif, .jpeg, .svg
+            </span>
+            <span v-else-if="!$v.form.avatar.responseOk" class="form-error">
+              The supplied image cannot be found
             </span>
           </template>
         </div>
@@ -103,6 +113,11 @@
 </template>
 
 <script>
+  import {required, email, minLength, url} from 'vuelidate/lib/validators'
+  import {
+    uniqueEmail, uniqueUsername, responseOk, supportedImageFile
+  } from '@/utils/validators'
+
   export default {
     data () {
       return {
@@ -142,8 +157,15 @@
     },
     methods: {
       register () {
+        this.$v.form.$touch()
+        if (this.$v.form.$invalid) {
+          return
+        }
 
-      }
+        this.$store.dispatch('auth/registerUserWithEmailAndPassword', this.form)
+          .then(() => this.successRedirect())
+      },
+
     }
   }
 </script>
