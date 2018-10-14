@@ -12,8 +12,13 @@
             type="text"
             class="form-input"
           >
-          <template>
-
+          <template v-if="$v.form.email.$error">
+            <span v-if="!$v.form.email.required" class="form-error">
+              This field is required
+            </span>
+            <span v-else-if="!$v.form.email.email" class="form-error">
+              This in not a valid email address
+            </span>
           </template>
         </div>
         <div class="form-group">
@@ -25,11 +30,32 @@
             type="password"
             class="form-input"
           >
-          <template>
-
+          <template v-if="$v.form.password.$error">
+            <span v-if="!$v.form.password.required" class="form-error">
+              This field is required
+            </span>
+            <span v-if="!$v.form.password.minLength" class="form-error">
+              The password must be at least 6 characters long
+            </span>
           </template>
         </div>
+        <div class="push-top">
+          <button type="submit" class="btn-blue btn-block">
+            Log in
+          </button>
+        </div>
+        <div class="form-actions text-right">
+          <router-link :to="{name: 'Register'}">
+            Create an account?
+          </router-link>
+        </div>
       </form>
+      <div class="push-top text-center">
+        <button @click="signInWithGoogle" class="btn-red btn-xsmall">
+          <i class="fa fa-google fa-btn"></i>
+          Sign in with Google
+        </button>
+      </div>
     </div>
   </div>
 </template>
