@@ -56,3 +56,16 @@ figcaption {
   padding: 10px 20px;
   margin: 0;
 }
+
+.list-title a {
+  color: white;
+}
+
+.list-title a:hover {
+  color: #89c6af;
+}
+
+.img-round, .avatar, .avatar-xsmall, .avatar-small, .avatar-medium, .avatar-large, .avatar-xlarge {
+  border-radius: 50%;
+  max-width: 100%;
+}
