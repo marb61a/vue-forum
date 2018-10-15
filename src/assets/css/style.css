@@ -69,3 +69,36 @@ figcaption {
   border-radius: 50%;
   max-width: 100%;
 }
+
+.forum-list {
+  padding: 0;
+  background: white;
+  margin: 20px 0;
+}
+
+.forum-list .forum-listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 20px 30px;
+}
+
+.forum-list .forum-listing:nth-child(odd) {
+  background: rgba(73, 89, 96, 0.06);
+  border-bottom-left-radius: 20px;
+}
+
+.forum-list .forum-listing:last-child {
+  border-bottom-left-radius: 0;
+}
+
+.forum-list .forum-listing .forum-details {
+  flex-basis: 52%;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .forum-list .forum-listing .forum-details {
+      flex-basis: 100%;
+  }
+}
