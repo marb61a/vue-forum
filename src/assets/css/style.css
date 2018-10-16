@@ -177,6 +177,41 @@ figcaption {
   font-size: 26px;
 }
 
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.navbar-item, .navbar-mobile-item {
+  display: inline-block;
+  border-right: 1px solid #3c4d6a;
+  vertical-align: middle;
+}
+
+ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
+  border-right: none;
+}
+
+.navbar-item a, .navbar-mobile-item a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all .6s ease;
+  font-size: 18px;
+}
+
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
