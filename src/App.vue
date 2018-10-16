@@ -1,23 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <TheNavbar/>
+    <div class="container">
+      <router-view />
+      <AppSpinner />
+    </div>
   </div>
 </template>
 
 <script>
+import TheNavbar from '@/components/TheNavbar'
+import AppSpinner from '@/components/AppSpinner'
+
 export default {
-  name: 'App'
+  components: {
+    TheNavbar,
+    AppSpinner
+  },
+  data () {
+    return {
+      showPage: false
+    }
+  },
+  methods: {
+    pageReady () {
+      this.showPage = true
+    }
+  },
+  created () {
+
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "assets/css/style.css";
+
 </style>
