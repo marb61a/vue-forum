@@ -148,3 +148,36 @@ figcaption {
 .forum-list .forum-listing .last-thread .avatar {
   margin-right: 10px;
 }
+
+.forum-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.forum-stats ul {
+  font-size: 0px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.forum-stats ul li {
+  display: flex;
+  font-weight: 100;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.forum-stats ul li .fa {
+  margin-right: 5px;
+}
+
+.forum-stats ul li .fa-comments-o {
+  font-size: 26px;
+}
+
+#app {
+  background: #F5F8FE;
+  min-height: 100vh;
+}
