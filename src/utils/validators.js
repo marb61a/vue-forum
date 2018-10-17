@@ -1,5 +1,5 @@
 import {helpers as vuelidateHelpers} from 'vuelidate/lib/validators'
-import { resolve } from 'url';
+import { resolve } from 'url'
 
 export const uniqueUsername = (value) => {
   if (!vuelidateHelpers.req(value)) {
