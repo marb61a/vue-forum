@@ -248,6 +248,59 @@ ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
   }
 }
 
+@media (min-width: 240px) and (max-width: 720px) {
+  .navbar-open {
+    display: flex;
+    transition: all 0.6s ease;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .navbar-open .navbar-item, .navbar-open .navbar-mobile-item {
+    margin: 6px 0;
+  }
+
+  .navbar-open ul {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+}
+
+.signs .navbar-item, .signs .navbar-mobile-item {
+  border-right: none;
+}
+
+.a-active {
+  color: #57AD8D;
+}
+
+.icon-profile {
+  width: 10px;
+  height: 8px;
+}
+
+.navbar-user {
+  margin-left: auto;
+}
+
+.navbar-user a {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navbar-user a:hover .icon-profile {
+  transition: all .4s ease;
+  transform: rotate(-180deg);
+}
+
+.navbar-user img {
+  margin-right: 10px;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
