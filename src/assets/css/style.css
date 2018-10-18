@@ -353,6 +353,47 @@ ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
   top: 16px;
 }
 
+
+/* TITLE */
+header > a.logo {
+  width: 50px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  header > a.logo {
+      width: 35px;
+  }
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+@media (min-width: 1360px) {
+  .title {
+    font-size: 46px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 820px) {
+  .title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .title {
+    font-size: 30px;
+  }
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
