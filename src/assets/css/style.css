@@ -301,6 +301,58 @@ ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
   margin-right: 10px;
 }
 
+
+/* HAMBUGRER */
+.btn-hamburger {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  float: right;
+  position: relative;
+  margin-left: 20px;
+  display: none;
+}
+
+.btn-hamburger .top {
+  top: 7px;
+}
+
+.btn-hamburger .middle {
+  top: 16px;
+}
+
+.btn-hamburger .bottom {
+  top: 26px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .btn-hamburger {
+      display: block;
+  }
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background: white;
+  position: absolute;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.btn-hamburger-active .top {
+  top: 16px;
+}
+
+.btn-hamburger-active .middle {
+  opacity: 0;
+  overflow: hidden;
+}
+
+.btn-hamburger-active .bottom {
+  top: 16px;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
