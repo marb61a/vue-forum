@@ -394,6 +394,47 @@ header > a.logo {
   }
 }
 
+.title-white {
+  color: white;
+}
+
+.title-banner {
+  color: white;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 26px;
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .subtitle {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 400px) {
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+
+/* DROPDOWN */
+#user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  z-index: 6;
+  display: none;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
