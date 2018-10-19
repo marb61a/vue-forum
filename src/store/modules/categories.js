@@ -19,7 +19,7 @@ export default {
           })
       })
     },
-    fetchCategory: (),
-    fetchCategories:()
+    fetchCategory: ({dispatch}, {id}) => dispatch(),
+    fetchCategories: ({dispatch}, {ids}) => dispatch()
   }
 }
