@@ -435,6 +435,46 @@ header > a.logo {
   display: none;
 }
 
+@media (min-width: 240px) and (max-width: 720px) {
+  #user-dropdown {
+      position: relative;
+      width: 100%;
+      right: 0;
+      z-index: 10;
+      top: 98px;
+  }
+}
+
+#user-dropdown.active-drop {
+  display: block;
+}
+
+.active-drop {
+  display: block;
+}
+
+.dropdown-menu, #user-dropdown > .dropdown-menu {
+  display: block;
+  background: white;
+  padding: 20px;
+  position: relative;
+}
+
+.dropdown-menu-item, #user-dropdown > .dropdown-menu > .dropdown-menu-item {
+  margin-bottom: 5px;
+}
+
+.dropdown-menu-item a, #user-dropdown > .dropdown-menu > .dropdown-menu-item a {
+  display: block;
+  color: #57AD8D;
+  font-size: 16px;
+  transition: all ease 0.6s;
+}
+
+.dropdown-menu-item a:hover, #user-dropdown > .dropdown-menu > .dropdown-menu-item a:hover {
+  color: #41826a;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
