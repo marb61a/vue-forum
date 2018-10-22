@@ -6,6 +6,23 @@
       </p>
       <div class="form-group">
         <input
+          v-model.lazy="activeUser.username"
+          @blur="$v.activeUser.username.$touch()"
+          type="text"
+          placeholder="Username"
+          class="form-input text-lead text-bold"
+        >
+        <template>
+          <span>
+            This is a required field
+          </span>
+          <span>
+            Username is already taken
+          </span>
+        </template>
+      </div>
+      <div class="form-group">
+        <input
 
         >
       </div>
@@ -30,7 +47,12 @@ export default {
     }
   },
   computed: {
+    userThreadsCount () {
 
+    },
+    userPostsCount () {
+
+    }
   },
   valiations: {
     activeUser : {
@@ -39,18 +61,30 @@ export default {
       },
       username: {
         required,
-        unique () {
+        unique (value) {
+
+        }
+      },
+      email: {
+        required,
+        email,
+        unique (value) {
 
         }
       }
     }
   },
   methods: {
+    save () {
+      this.$v.activeUser.$touch()
+    },
+    cancel () {
 
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
