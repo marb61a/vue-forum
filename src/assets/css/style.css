@@ -510,6 +510,44 @@ header > a.logo {
 
 
 /* MENTIONSLIST */
+.mentionsList {
+  position: absolute;
+  width: 160px;
+  z-index: 2;
+  background-color: #263959;
+  box-shadow: 2px 2px 1px rgba(136, 136, 136, 0.09);
+  color: white;
+}
+
+.mentionsList li {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.mentionsList li img {
+  margin-right: 2px;
+}
+
+.mentionsList li:hover {
+  cursor: pointer;
+  background-color: #57AD8D;
+}
+
+.mentionsList li:not(:last-of-type) {
+  margin-bottom: 3px;
+}
+
+.mentionsList::before {
+  border-bottom: solid 8px #263959;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  content: "";
+  display: inline-block;
+  left: 52px;
+  position: absolute;
+  top: -8px;
+}
 
 #app {
   background: #F5F8FE;
