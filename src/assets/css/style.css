@@ -475,6 +475,42 @@ header > a.logo {
   color: #41826a;
 }
 
+.triangle-drop {
+  border-bottom: solid 8px white;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  left: 70%;
+  vertical-align: middle;
+  bottom: -8px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .triangle-drop {
+    left: 5%;
+  }
+}
+
+#user-dropdown a {
+  color: #57AD8D;
+  text-decoration: none;
+  transition: all .6s ease;
+}
+
+#user-dropdown a:hover {
+  color: #41826a;
+  cursor: pointer;
+}
+
+#user-dropdown ul {
+  display: block;
+}
+
+
+/* MENTIONSLIST */
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
