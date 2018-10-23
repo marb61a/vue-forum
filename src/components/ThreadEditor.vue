@@ -33,6 +33,36 @@ export default {
       type: String,
       default: ''
     }
+  },
+  data () {
+    return {
+      form: {
+        title: this.title,
+        text: this.text
+      }
+    }
+  },
+  validations: {
+    form: {
+      title: {
+        required,
+        minLength: minLength(10)
+      },
+      text: {
+        required,
+        minLength: minLength(40)
+      }
+    }
+  },
+  computed: {
+    isUpdate () {
+      return !!this.title
+    }
+  },
+  methods: {
+    save () {
+
+    }
   }
 }
 </script>
