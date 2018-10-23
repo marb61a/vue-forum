@@ -549,6 +549,47 @@ header > a.logo {
   top: -8px;
 }
 
+.mentionsList .arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+
+/* FORM */
+input {
+  box-shadow: none;
+}
+
+form {
+  margin: 0;
+}
+
+.form-input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+  color: #505050;
+  background-color: #fdfdfd;
+  min-height: 43px;
+}
+
+.form-input:disabled {
+  cursor: no-drop;
+  background: #F5F8FE;
+  color: #bbbbbb;
+}
+
+.form-input:disabled::placeholder {
+  color: #bbbbbb;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
