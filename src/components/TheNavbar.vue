@@ -33,13 +33,29 @@
             <div class="triangle-drop"></div>
             <ul class="dropdown-menu">
               <li class="dropdown-menu-item">
-
+                <router-link :to="{name: 'Profile'}">
+                  View Profile
+                </router-link>
               </li>
               <li class="dropdown-menu-item">
-
+                <a @click.prevent="$store.dispatch('auth/signOut')">
+                  Sign Out
+                </a>
               </li>
             </ul>
           </div>
+        </li>
+      </ul>
+      <ul v-else>
+        <li class="navbar-item">
+          <router-link :to="{name: 'SignIn'}">
+            Sign In
+          </router-link>
+        </li>
+        <li class="navbar-item">
+          <router-link :to="{name: 'Register'}">
+            Register
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -47,9 +63,18 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+
   export default {
     data () {
-
+      return {
+        userDropdownOpen: false
+      }
+    },
+    computed: {
+      ...mapGetters({
+        'user': 'auth/authUser'
+      })
     }
   }
 </script>
