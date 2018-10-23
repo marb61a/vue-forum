@@ -23,8 +23,35 @@
       </div>
       <div class="form-group">
         <input
-
+          v-model="activeUser.name"
+          @blur="$v.activeUser.name.$touch()"
+          type="text"
+          placeholder="Full Name"
+          class="form-input text-lead"
         >
+        <template  v-if="$v.activeUser.name.$error">
+          <span v-if="!$v.activeUser.name.required" class="form-error">
+            This is a required field
+          </span>
+        </template>
+      </div>
+      <div class="form-group">
+        <label for="user_bio">Bio</label>
+        <textarea
+          v-model="activeUser.bio"
+          class="form-input"
+          id="user_bio"
+          placeholder="Write a few words about yourself."
+        >
+        </textarea>
+      </div>
+      <div class="stats">
+        <span>{{userPostsCount}} posts</span>
+        <span>{{userThreadsCount}} threads</span>
+      </div>
+      <hr>
+      <div class="form-group">
+
       </div>
     </div>
   </div>
