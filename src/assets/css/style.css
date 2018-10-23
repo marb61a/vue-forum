@@ -590,6 +590,49 @@ form {
   color: #bbbbbb;
 }
 
+.form-input::placeholder {
+  font-size: inherit;
+  font-weight: 300;
+  color: #878787;
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1px solid #c7c7c7;
+  color: #434343;
+  background-color: white;
+}
+
+.form-input:invalid {
+  border-color: #C82543;
+}
+
+.form-input:invalid ~ .form-error {
+  display: block;
+}
+
+@media (min-width: 240px) and (max-width: 400px) {
+  .form-input {
+    padding-left: 10px;
+    height: 50px;
+  }
+}
+
+textarea.form-input {
+  padding-top: 7px;
+  padding-right: 2px;
+  padding-bottom: 0px;
+  min-height: 110px;
+}
+
+.input-error {
+  border-color: #C82543;
+}
+
+.input-error ~ .form-error {
+  display: block;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
