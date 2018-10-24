@@ -2,10 +2,34 @@
   <div>
     <h1>
       {{thread.title}}
-      <router-link>
-
+      <router-link
+        :to="{name: 'ThreadEdit', id: this.id}"
+        class="btn-green btn-small"
+        tag="button"
+      >
+        Edit Thread
       </router-link>
     </h1>
+    <p>
+      By <a href="#" class="link-unstyled">
+        {{user.name}}
+      </a>,
+      <AppDate :timestamp="thread.publishedAt"/>.
+      <span
+        style="float:right; margin-top: 2px;"
+        class="hide-mobile text-faded text-small"
+      >
+        {{repliesCount}} replies by {{contributorsCount}} contributors
+      </span>
+    </p>
+    <PostList :posts="posts"/>
+    <PostEditor
+      v-if="authUser"
+      :threadId="id"
+    />
+    <div>
+
+    </div>
   </div>
 </template>
 
@@ -60,10 +84,13 @@ export default {
     this.fetchThread({id: this.id})
       .then(thread => {
         // Fetch user
-
+        this.fetchUser({id: thread.userId})
+        return this.fetchPosts({ids: Object.keys(thread.posts)})
       })
       .then(posts => {
-
+        return Promise.all(posts.map(post => {
+          this.fetchUser({id: post.userId})
+        }))
       })
       .then(() => { this.asyncDataStatus_fetched() })
   }
