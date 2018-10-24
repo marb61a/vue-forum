@@ -80,6 +80,23 @@
           </span>
         </template>
       </div>
+      <div class="form-group">
+        <label class="form-label" for="user_location">Location</label>
+        <input
+          v-model="activeUser.location"
+          autocomplete="off"
+          class="form-input"
+          id="user_location"
+        >
+      </div>
+      <div class="btn-group space-between">
+        <button @click.prevent="cancel" class="btn-ghost">
+          Cancel
+        </button>
+        <button @click.prevent="save" type="submit" class="btn-blue">
+          Save
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -102,10 +119,10 @@ export default {
   },
   computed: {
     userThreadsCount () {
-
+      return this.$store.getters['users/userThreadsCount'](this.user['.key'])
     },
     userPostsCount () {
-
+      return this.$store.getters['users/userPostsCount'](this.user['.key'])
     }
   },
   valiations: {
@@ -116,14 +133,22 @@ export default {
       username: {
         required,
         unique (value) {
+          if (value.toLowerCase() === this.user.usernameLower) {
+            return true
+          }
 
+          return uniqueUsername(value)
         }
       },
       email: {
         required,
         email,
         unique (value) {
+          if (value.toLowerCase() === this.user.email) {
+            return true
+          }
 
+          return uniqueEmail(value)
         }
       }
     }
@@ -131,9 +156,15 @@ export default {
   methods: {
     save () {
       this.$v.activeUser.$touch()
+
+      if (!this.$v.activeUser.invalid) {
+        this.$store.dispatch('users/updateUser', {
+          name: 'Profile'
+        })
+      }
     },
     cancel () {
-
+      this.$router.push({name: 'Profile'})
     }
   }
 }
