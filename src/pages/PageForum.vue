@@ -13,6 +13,9 @@
         </router-link>
       </div>
     </div>
+    <div class="col-full push-top">
+      <ThreadList :threads="threads"/>
+    </div>
   </div>
 </template>
 
@@ -25,7 +28,7 @@ export default {
   components: {
     ThreadList
   },
-  mixins: [],
+  mixins: [asyncDataStatus],
   props: {
     id: {
       required: true,
@@ -33,13 +36,26 @@ export default {
     }
   },
   computed: {
-
+    forum () {
+      return this.$store.state.forums.items[this.id]
+    },
+    threads () {
+      return Object.values(this.$store.state.threads.items)
+        .filter(thread => thread.forumId === this.id)
+    }
   },
   methods: {
-
+    ...mapActions('forums', ['fetchForum']),
+    ...mapActions('threads', ['fetchThreads']),
+    ...mapActions('users', ['fetchUser'])
   },
   created () {
-
+    this.fetchForum({id: this.id})
+      .then(forum => this.fetchThreads({ids: forum.threads}))
+      .then(threads => Promise.all(threads.map
+        (thread => this.fetchUser({id: thread.userId}))
+      ))
+      .then(() => { this.asyncDataStatus_fetched() })
   }
 }
 </script>
