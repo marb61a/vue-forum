@@ -633,6 +633,44 @@ textarea.form-input {
   display: block;
 }
 
+.form-error {
+  background: #f4d3d9;
+  color: #C82543;
+  font-size: 0.8em;
+  float: left;
+  border-radius: 100px;
+  padding: 6px 20px;
+  margin-top: 10px;
+}
+
+@media (min-width: 240px) and (max-width: 400px) {
+  .form-error {
+    width: 100%;
+  }
+}
+
+.form-group {
+  margin-bottom: 12px;
+  width: 100%;
+  display: inline-block;
+}
+
+.form-label, .form-group > label {
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #767676;
+}
+
+.form-label-password, .form-group > label-password {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .form-btn {
+    width: 100%;
+  }
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
