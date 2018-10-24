@@ -51,7 +51,34 @@
       </div>
       <hr>
       <div class="form-group">
-
+        <label class="form-label" for="user_website">Website</label>
+        <input
+          v-model="activeUser.website"
+          autocomplete="off"
+          class="form-input"
+          id="user_website"
+        >
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="user_email">Email</label>
+        <input
+          v-model.lazy="activeUser.email"
+          @blur="$v.activeUser.email.$touch()"
+          autocomplete="off"
+          class="form-input"
+          id="user_email"
+        >
+        <template v-if="$v.activeUser.email.$error">
+          <span v-if="!$v.activeUser.email.required" class="form-error">
+            This field is required
+          </span>
+          <span v-else-if="!$v.activeUser.email.email" class="form-error">
+            This in not a valid email address
+          </span>
+          <span v-else-if="!$v.activeUser.email.unique" class="form-error">
+            Sorry! This email is taken
+          </span>
+        </template>
       </div>
     </div>
   </div>
