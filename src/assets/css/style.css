@@ -65,7 +65,8 @@ figcaption {
   color: #89c6af;
 }
 
-.img-round, .avatar, .avatar-xsmall, .avatar-small, .avatar-medium, .avatar-large, .avatar-xlarge {
+.img-round, .avatar, .avatar-xsmall, .avatar-small, .avatar-medium,
+.avatar-large, .avatar-xlarge {
   border-radius: 50%;
   max-width: 100%;
 }
@@ -119,7 +120,8 @@ figcaption {
   display: inline;
 }
 
-.forum-list .forum-listing .forum-details ul.subforums.subforums li:not(:last-of-type)::after {
+.forum-list .forum-listing .forum-details ul.subforums.subforums
+li:not(:last-of-type)::after {
   content: '\f111';
   font-family: 'FontAwesome';
   font-size: 4px;
@@ -712,7 +714,8 @@ button {
   appearance: none;
 }
 
-.btn, .btn-blue, .btn-blue-outlined, .btn-brown, .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
+.btn, .btn-blue, .btn-blue-outlined, .btn-brown, .btn-brown-outlined,
+.btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
   padding: 15px 30px;
   border-radius: 5px;
   border: none;
@@ -722,9 +725,47 @@ button {
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .btn, .btn-blue, .btn-blue-outlined, .btn-brown, .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
+  .btn, .btn-blue, .btn-blue-outlined, .btn-brown, .btn-brown-outlined,
+  .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
     padding: 10px 20px;
   }
+}
+
+.btn:disabled, .btn-blue:disabled, .btn-blue-outlined:disabled,
+.btn-brown:disabled, .btn-brown-outlined:disabled, .btn-green:disabled,
+.btn-green-outlined:disabled, .btn-red:disabled, .btn-red-outlined:disabled,
+.btn-ghost:disabled, .btn-disabled {
+  cursor: default;
+}
+
+.btn:disabled:hover, .btn-blue:disabled:hover,
+.btn-blue-outlined:disabled:hover, .btn-brown:disabled:hover,
+.btn-brown-outlined:disabled:hover, .btn-green:disabled:hover,
+.btn-green-outlined:disabled:hover, .btn-red:disabled:hover,
+.btn-red-outlined:disabled:hover, .btn-ghost:disabled:hover,
+.btn-disabled:hover {
+  cursor: default;
+  color: white;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-xsmall {
+  padding: 6px 15px;
+}
+
+.btn-small {
+  padding: 10px 20px;
+}
+
+.btn-large {
+  padding: 20px 40px;
+}
+
+.btn-xlarge {
+  padding: 20px 60px;
 }
 
 #app {
