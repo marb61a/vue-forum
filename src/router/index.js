@@ -98,4 +98,31 @@ const router = new Router({
   mode: 'history'
 })
 
+router.beforeEach((to, from, next) => {
+  console.log(`Navigating to ${to.name} from ${from.name}`)
+
+  store.dispatch('auth/initAuthentication')
+    .then(user => {
+      if (to.matched.some(route => route.meta.requiresAuth)) {
+        // Protected route
+        if (user) {
+          next()
+        } else {
+          next({
+            name: 'SignIn', query: {redirectTo: to.path}
+          })
+        }
+      } else if (to.matched.some(route => route.meta.requiresGuest)) {
+        // Protected route
+        if (!user) {
+          next()
+        } else {
+          next({name: 'Home'})
+        }
+      } else {
+        next()
+      }
+    })
+})
+
 export default router
