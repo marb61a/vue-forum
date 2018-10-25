@@ -25,6 +25,39 @@ export default {
         }
         thread.posts[postId] = postId
         const post = {text, publishedAt, threadId, userId}
+
+        const updates = {}
+        updates[`threads/${threadId}`] = thread
+        updates[`forums/${forumId}/threads/${threadId}`] = threadId
+        updates[`users/${userId}/threads/${threadId}`] = threadId
+
+        updates[`posts/${postId}`] = post
+        updates[`users/${userId}/posts/${postId}`] = postId
+
+        firebase.database().ref().update(updates)
+          .then(() => {
+            // Update the thread
+            commit('setItem', {
+              resource: 'threads',
+              id: threadId,
+              item: thread
+            }, {root: true})
+            commit('forums/appendThreadToForum', {
+              parentId: forumId,
+              childId: threadId
+            }, {root: true})
+            commit('users/appendThreadToUser', {
+              parentId: userId,
+              childId: threadId
+            }, {root: true})
+
+            // Update post
+            commit('setItem', {
+              resource: 'posts',
+              item: post,
+              id: postId
+            }, {root: true})
+          })
       })
     },
     updateThread ({state, commit, dispatch, rootState}, {title, text, id}) {
