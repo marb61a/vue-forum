@@ -768,6 +768,47 @@ button {
   padding: 20px 60px;
 }
 
+.btn-circle {
+  height: 60px;
+  width: 60px;
+  background: #C82543;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+  padding: 0px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: white;
+}
+
+.btn-circle:hover {
+  background: #b4213c;
+}
+
+.btn-circle:hover .icon-arrow-up {
+  transition: all ease 0.4s;
+  transform: translateY(-2px);
+}
+
+.btn-circle:hover .icon-arrow {
+  transition: all ease 0.4s;
+  transform: translateX(2px);
+}
+
+.btn-circle:hover .icon-arrow-left {
+  transition: all ease 0.4s;
+  transform: translateX(-2px) rotate(180deg);
+}
+
+.btn-circle-default {
+  background: #878787;
+}
+
+.btn-circle-default:hover {
+  background: #4c4c4c;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
