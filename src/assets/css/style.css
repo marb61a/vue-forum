@@ -673,6 +673,8 @@ textarea.form-input {
   }
 }
 
+
+/* BUTTONS */
 input[type="submit"],
 button {
   -webkit-appearance: none;
@@ -807,6 +809,54 @@ button {
 
 .btn-circle-default:hover {
   background: #4c4c4c;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .btn-circle {
+    height: 45px;
+    width: 45px;
+    padding-top: 14px;
+  }
+}
+
+.btn-blue {
+  color: white;
+  background: #263959;
+}
+
+.btn-blue:hover:not(:disabled):not(.btn-disabled) {
+  color: white;
+  background: #1d2b43;
+}
+
+.btn-blue-outlined {
+  color: #263959;
+  box-shadow: inset 0px 0px 0px 1.6px #263959;
+}
+
+.btn-blue-outlined:hover {
+  color: white;
+  background: #263959;
+}
+
+.btn-brown {
+  color: white;
+  background: #bf9268;
+}
+
+.btn-brown:hover:not(:disabled):not(.btn-disabled) {
+  color: white;
+  background: #8f6e4e;
+}
+
+.btn-brown-outlined {
+  color: #bf9268;
+  box-shadow: inset 0px 0px 0px 1.6px #bf9268;
+}
+
+.btn-brown-outlined:hover {
+  color: white;
+  background: #bf9268;
 }
 
 #app {
