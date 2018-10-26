@@ -859,6 +859,67 @@ button {
   background: #bf9268;
 }
 
+.btn-green {
+  color: white;
+  background: #57AD8D;
+}
+
+.btn-green:hover:not(:disabled):not(.btn-disabled) {
+  color: white;
+  background: #4e9c7f;
+}
+
+.btn-green-outlined {
+  color: #57AD8D;
+  box-shadow: inset 0px 0px 0px 1.6px #57AD8D;
+}
+
+.btn-green-outlined:hover {
+  color: white;
+  background: #57AD8D;
+}
+
+.btn-red {
+  color: white;
+  background: #C82543;
+}
+
+.btn-red:hover:not(:disabled):not(.btn-disabled) {
+  color: white;
+  background: #b4213c;
+}
+
+.btn-red-outlined {
+  color: #C82543;
+  box-shadow: inset 0px 0px 0px 1.6px #C82543;
+}
+
+.btn-red-outlined:hover {
+  color: white;
+  background: #C82543;
+}
+
+.btn-green {
+  color: white;
+  background: #57AD8D;
+}
+
+.btn-green:hover:not(:disabled):not(.btn-disabled) {
+  color: white;
+  background: #4e9c7f;
+}
+
+.btn-red {
+  color: white;
+  background: #C82543;
+}
+
+.btn-red:hover:not(:disabled):not(.btn-disabled) {
+  color: white;
+  background: #b4213c;
+}
+
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
