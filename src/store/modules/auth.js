@@ -33,14 +33,40 @@ export default {
         commit('setUnsubscribeAuthObserver', unsubscribe)
       })
     },
-    registerUserWithEmailAndPassword () {
-
+    registerUserWithEmailAndPassword ({dispatch}, {
+      email, name, username, password, avatar = null
+    }) {
+      return firebase.auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(user => {
+          return dispatch('users/createUser', {
+            id: user.uid, email, name, username, password, avatar
+          }, {root: true})
+        })
+        .then(() => dispatch('fetchAuthUser'))
     },
     signInWithEmailAndPassword () {
+
+    },
+    signInWithGoogle ({dispatch}) {
+
+    },
+    signOut ({commit}) {
+      return firebase.auth().signOut()
+        .then(() => {
+          commit('setAuthId', null)
+        })
+    },
+    fetchAuthUser ({dispatch, commit}) {
 
     }
   },
   mutations: {
-
+    setAuthId (state, id) {
+      state.authId = id
+    },
+    setUnsubscribeAuthObserver (state, unsubscribe) {
+      state.unsubscribeAuthObserver = unsubscribe
+    }
   }
 }
