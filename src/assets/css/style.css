@@ -961,6 +961,65 @@ button {
   transform: rotate(0);
 }
 
+.btn-social svg:hover {
+  transform: rotate(-40deg);
+}
+
+.icon-arrow-up {
+  width: 12px;
+  height: 18px;
+  transform: translate(0, 0);
+}
+
+.icon-arrow {
+  height: 21px;
+  transform: translate(0, 0);
+  width: 28px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .icon-arrow {
+    height: 14px;
+    width: 21px;
+  }
+}
+
+.icon-arrow-left {
+  width: 28px;
+  height: 21px;
+  transform: translate(0, 0);
+  transform: rotate(180deg);
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .icon-arrow-left {
+      height: 14px;
+      width: 21px;
+  }
+}
+
+.link {
+  color: #57AD8D;
+  text-decoration: underline;
+  transition: all ease 0.4s;
+}
+
+.link:hover {
+  color: #468a71;
+}
+
+button {
+  outline: 0;
+}
+
+.form-actions, .btn-group {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
