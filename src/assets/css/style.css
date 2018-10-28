@@ -919,6 +919,47 @@ button {
   background: #b4213c;
 }
 
+.btn-up {
+  height: 40px;
+  width: 40px;
+  padding-top:10px;
+  text-align: center;
+}
+
+.btn-input {
+  height: 52px;
+  line-height: 48px;
+  position: absolute;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open sans', sans-serif;
+  font-size: 18px;
+  padding: 0 25px;
+  right: 4px;
+  top: 4px;
+  transition: background 0.15s ease;
+  z-index: 10;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .btn-input {
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+.btn-social {
+  margin-right: 6px;
+}
+
+.btn-social svg {
+  height: 40px;
+  width: 40px;
+  transition: all ease 0.6s;
+  transform: rotate(0);
+}
 
 #app {
   background: #F5F8FE;
