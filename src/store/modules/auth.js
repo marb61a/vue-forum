@@ -81,7 +81,20 @@ export default {
 
       return new Promise((resolve, reject) => {
         // Check if user exists in DB
-
+        firebase.database().ref('users').child(userId)
+          .once('value', snapshot => {
+            if (snapshot.exists()) {
+              return dispatch('users/fetchUser',
+                {id: userId}, {root: true}
+              )
+                .then(user => {
+                  commit('setAuthId', userId)
+                  resolve(user)
+                })
+            } else {
+              resolve(null)
+            }
+          })
       })
     }
   },

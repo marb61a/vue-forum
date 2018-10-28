@@ -38,7 +38,18 @@ export default {
     },
     updatePost ({state, commit, rootState}, {id, text}) {
       return new Promise((resolve, reject) => {
+        const post = state.items[id]
+        const edited = {
+          at: Math.floor(Date.now() / 1000),
+          by: rootState.auth.authId
+        }
+        const updates = {text, edited}
 
+        firebase.database().ref('posts').child(id).update(updates)
+          .then(() => {
+            commit('setPost', {postId: id, post: {...post, text, edited}})
+            resolve(post)
+          })
       })
     },
     fetchPost: ({dispatch}, {id}) => dispatch('fetchItem'),
