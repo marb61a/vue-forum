@@ -15,7 +15,17 @@
       </template>
     </div>
     <div class="form-group">
-
+      <label for="thread_content">Content:</label>
+      <textarea
+        v-model="form.text"
+        @blur="$v.form.text.$touch()"
+        id="thread_content"
+        class="form-input"
+        name="content"
+        rows="8"
+        cols="140"
+      >
+      </textarea>
     </div>
   </form>
 </template>
@@ -61,7 +71,16 @@ export default {
   },
   methods: {
     save () {
-
+      this.$v.form.$touch()
+      if (!this.$v.form.$invalid) {
+        this.$emit('save', {
+          title: this.form.title,
+          text: this.form.text
+        })
+      }
+    },
+    cancel () {
+      this.$emit('cancel')
     }
   }
 }

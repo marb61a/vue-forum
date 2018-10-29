@@ -33,6 +33,12 @@
         >
       </div>
     </div>
+    <div class="post-date text-faded">
+      <div v-if="post.edited" class="edition-info">
+        edited
+      </div>
+      <AppDate :timestamp="post.publishedAt"/>
+    </div>
   </div>
 </template>
 
@@ -56,7 +62,13 @@ export default {
   },
   computed: {
     user () {
-
+      return this.$store.state.users.items[this.post.userId]
+    },
+    userPostsCount () {
+      return this.$store.getters['users/userPostsCount'](this.post.userId)
+    },
+    userThreadsCount () {
+      return this.$store.getters['users/userThreadsCount'](this.post.userId)
     }
   }
 }
