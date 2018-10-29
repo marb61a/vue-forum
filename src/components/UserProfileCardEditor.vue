@@ -98,6 +98,9 @@
         </button>
       </div>
     </div>
+    <p class="text-xsmall text-faded text-center">
+      Member since june 2003, last visited 4 hours ago
+    </p>
   </div>
 </template>
 
