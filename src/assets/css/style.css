@@ -1071,6 +1071,49 @@ button {
   }
 }
 
+.close {
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .close {
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+}
+
+.close-icon {
+  stroke: #fff;
+  height: 12px;
+  width: 12px;
+}
+
+
+/* AVATAR */
+.avatar {
+  width: 50px;
+  max-width: 50px;
+  height: 50px;
+  max-height: 50px;
+}
+
+.avatar-xsmall {
+  width: 25px;
+  max-width: 25px;
+  height: 25px;
+  max-height: 25px;
+}
+
+.avatar-small {
+  width: 35px;
+  max-width: 35px;
+  height: 35px;
+  max-height: 35px;
+}
+
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
