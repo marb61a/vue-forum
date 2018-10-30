@@ -1154,6 +1154,40 @@ button {
   margin-top: 40px;
 }
 
+@media (min-width: 1360px) {
+  .card-form {
+
+    padding: 60px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .card-form {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .card-form {
+    padding: 40px 20px;
+    margin-top: 10px;
+  }
+}
+
+.striped {
+  background: white;
+  box-shadow: 1px 1px 1px #f1f1f1;
+}
+
+.striped li {
+  padding: 10px 5px 10px 12px;
+  box-shadow: 0 1px rgba(73, 89, 96, 0.06);
+}
+
+.striped li:nth-child(even) {
+  background: rgba(73, 89, 96, 0.06);
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
