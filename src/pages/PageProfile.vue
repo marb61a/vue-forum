@@ -42,10 +42,16 @@ export default {
     }
   },
   computed: {
-
+    ...mapGetters({
+      user: 'auth/authUser'
+    }),
+    userPosts () {
+      return this.$store.getters['users/userPosts'](this.user['.key'])
+    }
   },
   created () {
-
+    this.$store.dispatch('posts/fetchPosts', {ids: this.user.posts})
+      .then(() => this.asyncDataStatus_fetched())
   }
 }
 </script>

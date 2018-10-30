@@ -32,6 +32,21 @@ export default {
           .set(user)
           .then()
       })
+    },
+    updateUser ({commit}, user) {
+      const updates = {
+        avatar: user.avatar,
+        username: user.username,
+        name: user.name,
+        bio: user.bio,
+        website: user.website,
+        email: user.email,
+        location: user.location
+      }
+
+      return new Promise((resolve, reject) => {
+
+      })
     }
   },
   mutations: {
