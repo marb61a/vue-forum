@@ -1113,6 +1113,46 @@ button {
   max-height: 35px;
 }
 
+.avatar-medium {
+  width: 35px;
+  max-width: 35px;
+  height: 35px;
+  max-height: 35px;
+}
+
+.avatar-large {
+  width: 95px;
+  max-width: 95px;
+  height: 95px;
+  max-height: 95px;
+}
+
+.avatar-xlarge {
+  width: 200px;
+  max-width: 200px;
+  height: 200px;
+  max-height: 200px;
+}
+
+
+/* CARD */
+.card {
+  background: white;
+  margin-top: 20px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+.card-form {
+  padding: 40px 60px;
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+}
 
 #app {
   background: #F5F8FE;
