@@ -13,9 +13,16 @@ export default {
       const user = state.items[id]
 
       if (user.posts) {
-
+        return Object.values(rootState.posts.items)
+          .filter(post => post.userId === id)
       }
-    }
+
+      return []
+    },
+    userThreadsCount: state => id =>
+      countObjectProperties(state.items[id].threads),
+    userPostsCount: state => id =>
+      countObjectProperties(state.items[id].posts)
   },
   actions: {
     createUser ({state, commit}, {id, email, name, username, avatar = null}) {
@@ -30,7 +37,12 @@ export default {
         firebase.database().ref('users')
           .child(id)
           .set(user)
-          .then()
+          .then(() => {
+            commit('setItem', {
+              resource: 'users', id: id, item: user
+            }, {root: true})
+            resolve(state.items[id])
+          })
       })
     },
     updateUser ({commit}, user) {
@@ -45,7 +57,13 @@ export default {
       }
 
       return new Promise((resolve, reject) => {
-
+        firebase.database().ref('users')
+          .child(user['.key'])
+          .update(removeEmptyProperties(updates))
+          .then(() => {
+            commit('setUser', {userId: user['.key'], user})
+            resolve(user)
+          })
       })
     }
   },
