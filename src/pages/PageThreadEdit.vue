@@ -53,6 +53,30 @@ export default {
         .then(thread => {
           this.$router.push({name: 'ThreadShow', params: {id: this.id}})
         })
+    },
+    cancel () {
+      this.$router.push({name: 'ThreadShow', params: {id: this.id}})
+    }
+  },
+  created () {
+    this.fetchThread({id: this.id})
+      .then(thread => {
+        this.fetchPost({id: thread.firstPostId})
+      })
+      .then(() => { this.asyncDataStatus_fetched() })
+  },
+  beforeRouteLeave (to, from, next) {
+    if (this.hasUnsavedChanges) {
+      const confirmed = window.confirm(
+        'Are you sure you want to leave? Any unsaved changes will be lost!'
+      )
+      if (confirmed) {
+        next()
+      } else {
+        next(false)
+      }
+    } else {
+      next()
     }
   }
 }
