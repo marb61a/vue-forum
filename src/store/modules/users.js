@@ -65,12 +65,22 @@ export default {
             resolve(user)
           })
       })
-    }
+    },
+    fetchUser: ({dispatch}, {id}) => dispatch('fetchItem', {
+      resource: 'users', id, emoji: '🙋'
+    }, {root: true}),
+    fetchUsers: ({dispatch}, {ids}) => dispatch('fetchItems', {
+      resource: 'users', ids, emoji: '🙋'
+    }, {root: true})
   },
   mutations: {
     setUser (state, {user, userId}) {
       Vue.set(state.items, userId, user)
     },
+    appendPostToUser: makeAppendChildToParentMutation({
+      parent: 'users',
+      child: 'posts'
+    }),
     appendThreadToUser: makeAppendChildToParentMutation({
       parent: 'users',
       child: 'threads'

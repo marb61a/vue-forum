@@ -57,6 +57,14 @@ export default {
               item: post,
               id: postId
             }, {root: true})
+            commit('appendPostToThread', {
+              parentId: post.threadId, childId: postId
+            })
+            commit('users/appendPostToUser', {
+              parentId: post.userId, childId: postId
+            }, {root: true})
+
+            resolve(state.items[threadId])
           })
       })
     },
@@ -86,7 +94,13 @@ export default {
             resolve(post)
           })
       })
-    }
+    },
+    fetchThread: ({dispatch}, {id}) => dispatch('fetchItem', {
+      resource: 'threads', id, emoji: '📄'
+    }, {root: true}),
+    fetchThreads: ({dispatch}, {ids}) => dispatch('fetchItems', {
+      resource: 'threads', ids, emoji: '🌧'
+    }, {root: true})
   },
   mutations: {
     setThread (state, {thread, threadId}) {
