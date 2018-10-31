@@ -1310,6 +1310,57 @@ ul.breadcrumbs li a:hover {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+#moderation ul.toolbar a {
+  display: inline-block;
+  color: white;
+  line-height: 1.5;
+  padding: 5px 20px 5px 10px;
+}
+
+#moderation ul.toolbar a:hover .fa {
+  opacity: 1;
+}
+
+#moderation ul.toolbar a .fa {
+  opacity: 0.5;
+  margin: 0px 8px;
+}
+
+#moderation ul.toolbar a:focus {
+  outline: none;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  #moderation ul.toolbar {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  #moderation ul.toolbar li {
+    flex-basis: 100%;
+    margin: 0;
+    text-align: center;
+    border-right: none !important;
+  }
+
+  #moderation ul.toolbar li a {
+    display: block;
+    border: none;
+    font-size: 18px;
+    padding: 7px 0;
+  }
+
+  #moderation ul.toolbar li.close-toolbar .fa::before {
+    content: '\f107';
+    font-family: FontAwesome;
+  }
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
