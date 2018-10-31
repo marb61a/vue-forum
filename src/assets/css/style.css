@@ -1188,6 +1188,42 @@ button {
   background: rgba(73, 89, 96, 0.06);
 }
 
+
+/* SIDEBAR */
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+    flex-basis: 29%;
+    margin: 0 0.5%;
+    margin-top: 118px;
+    flex-direction: column;
+  }
+
+  .sidebar .widget {
+     background: white;
+    margin-bottom: 10px;
+  }
+}
+
+.sidebar ul > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sidebar ul > li > span {
+  flex-basis: 85%;
+}
+
+.sidebar .unanswered-threads-list {
+  margin-top: 10px;
+}
+
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
