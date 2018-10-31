@@ -52,8 +52,12 @@ export default {
           })
       })
     },
-    fetchPost: ({dispatch}, {id}) => dispatch('fetchItem'),
-    fetchPosts: ({dispatch}, {ids}) => dispatch('fetchItems')
+    fetchPost: ({dispatch}, {id}) => dispatch('fetchItem', {
+      resource: 'posts', id, emoji: ''
+    }, {root: true}),
+    fetchPosts: ({dispatch}, {ids}) => dispatch('fetchItems', {
+      resource: 'posts', ids, emoji: ''
+    }, {root: true})
   },
   mutations: {
     setPost (state, {post, postId}) {
