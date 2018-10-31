@@ -1270,6 +1270,46 @@ ul.breadcrumbs li a:hover {
   }
 }
 
+#moderation ul.toolbar {
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 20px;
+  box-shadow: 0px 0px 300px #ADADAD;
+  padding: 0 5px;
+  border-radius: 5px;
+  background-color: #313131;
+}
+
+#moderation ul.toolbar li {
+  margin: 10px 0;
+}
+
+#moderation ul.toolbar li.close-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+#moderation ul.toolbar li.close-toolbar .fa {
+  font-size: 30px;
+}
+
+#moderation ul.toolbar li.close-toolbar a {
+  padding: 0 10px;
+}
+
+#moderation ul.toolbar.open-toolbar {
+  display: none;
+}
+
+#moderation ul.toolbar:not(:last-of-type) {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
