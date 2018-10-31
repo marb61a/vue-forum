@@ -1409,6 +1409,49 @@ ul.breadcrumbs li a:hover {
   }
 }
 
+@media (min-width: 240px) and (max-width: 720px) {
+  body {
+    padding-bottom: 20px;
+  }
+}
+
+
+/* MODAL */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-container .modal {
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 200;
+  position: fixed;
+  top: 10vh;
+  width: 50vw;
+  max-width: 550px;
+  min-height: 25vh;
+  background: #F5F8FE;
+  background: #fcfdff;
+  background-color: white;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 240px) and (max-width: 900px) {
+  .modal-container .modal {
+    top: 5vh;
+    width: 95vw;
+    min-height: 40vh;
+  }
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
