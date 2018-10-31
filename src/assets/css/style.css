@@ -1224,6 +1224,52 @@ button {
 }
 
 
+/* BREADCRUMBS */
+ul.breadcrumbs {
+  list-style: none;
+  overflow: auto;
+  font-size: 0;
+}
+
+ul.breadcrumbs li {
+  display: inline-block;
+  padding: 5px 0px;
+  font-weight: 100;
+}
+
+ul.breadcrumbs li:not(:last-of-type)::after {
+  content: '\f105';
+  font-family: FontAwesome;
+  margin: 0px 4px;
+  opacity: 0.6;
+}
+
+ul.breadcrumbs li a {
+  color: #57AD8D;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+ul.breadcrumbs li a:hover {
+  opacity: 1;
+}
+
+
+/* MODERATION */
+#moderation {
+  display: flex;
+}
+
+#moderation justify-right {
+  margin-right: 20px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  #moderation justify-right {
+    margin: 0;
+  }
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
