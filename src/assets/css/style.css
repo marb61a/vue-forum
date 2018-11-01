@@ -1556,6 +1556,58 @@ figure {
   margin: 0
 }
 
+.flex-column {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1000px;
+  flex-direction: column;
+}
+
+@media (min-width: 1360px) {
+  .flex-column {
+    max-width: 1300px;
+  }
+}
+
+.flex-grid {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1360px) {
+  .flex-grid {
+    max-width: 1300px;
+  }
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.col {
+  margin: 0 1%;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .col {
+    margin: 0 4%;
+  }
+}
+
+.col-70 {
+  flex-basis: 70%;
+  margin: 0 auto;
+}
+
+
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
