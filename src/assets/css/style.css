@@ -1720,6 +1720,59 @@ figure {
   }
 }
 
+.col-large {
+  flex-basis: 72%;
+  margin: 0 1%;
+}
+
+@media (max-width: 1024px) {
+  .col-large {
+    flex-basis: 98%;
+    margin: 0 1%;
+  }
+}
+
+.col-small {
+  flex-basis: 24%;
+  margin: 0 1%;
+}
+
+@media (min-width: 240px) and (max-width: 720) {
+  .col-small {
+    flex-basis: 98%;
+    margin: 0 1%;
+  }
+}
+
+.align-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-left {
+  justify-content: flex-start;
+}
+
+.justify-right {
+  justify-content: flex-end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+@media (max-width: 820px) {
+  .desktop-only, .forum-list .forum-listing .threads-count, .forum-list
+  .forum-listing .last-thread, .forum-stats, .thread-list .thread .activity,
+  .navbar-user {
+    display: none;
+  }
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
