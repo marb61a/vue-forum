@@ -1500,6 +1500,62 @@ a.close:hover {
   color: #263959;
 }
 
+
+/* BODY */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #545454;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+body a {
+  color: #57AD8D;
+  text-decoration: none;
+  transition: all .6s ease;
+}
+
+body a:hover {
+  color: #41826a;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+figure {
+  margin: 0
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
