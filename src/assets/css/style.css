@@ -1773,6 +1773,57 @@ figure {
   }
 }
 
+@media (min-width: 820px) {
+  .mobile-only, .navbar-mobile-item {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 820px) {
+  .hide-tablet {
+    display: none
+  }
+}
+
+@media (max-width: 720px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+section {
+  margin-top: 20px;
+}
+
+.push-top {
+  margin-top: 20px;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.link-white {
+  color: white;
+}
+
+.link-unstyled, ul.breadcrumbs li a {
+  color: inherit;
+}
+
+.faded, .btn:disabled, .btn-blue:disabled, .btn-blue-outlined:disabled,
+.btn-brown:disabled, .btn-brown-outlined:disabled, .btn-green:disabled,
+.btn-green-outlined:disabled, .btn-red:disabled, .btn-red-outlined:disabled,
+.btn-ghost:disabled, .btn-disabled, a > img:hover {
+  opacity: 0.8;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
