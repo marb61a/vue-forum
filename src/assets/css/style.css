@@ -1452,6 +1452,54 @@ ul.breadcrumbs li a:hover {
   }
 }
 
+.modal-container .modal hr {
+  margin: 5px;
+}
+
+.modal-container .modal .btn-group {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-container .modal .modal-header, .modal-container .modal .modal-footer {
+  padding: 15px;
+  flex-basis: 100%;
+}
+
+.modal-container .modal .modal-header {
+  border-bottom: 3px solid rgba(73, 89, 96, 0.06);
+}
+
+.modal-container .modal .modal-header .title {
+  font-size: 32px;
+}
+
+.modal-container .modal .modal-content {
+  padding: 10px 30px;
+  min-height: 200px;
+}
+
+.modal-container .modal .modal-footer {
+  background: rgba(73, 89, 96, 0.06);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+a.close {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #263959;
+  font-size: 22px;
+  opacity: .7;
+}
+
+a.close:hover {
+  opacity: 1;
+  color: #263959;
+}
+
 #app {
   background: #F5F8FE;
   min-height: 100vh;
