@@ -244,6 +244,51 @@ li:not(:last-of-type)::after {
   border-radius: 5px;
 }
 
+.reactions button:hover {
+  background: rgba(115, 192, 151, 0.25) !important;
+  color: #545454 !important;
+}
+
+.reactions button.active-reaction {
+  background: rgba(115, 192, 151, 0.12);
+}
+
+.reactions button.active-reaction:hover {
+  background: white !important;
+}
+
+.reactions button .emoji {
+  margin-right: 3px;
+  font-size: 18px;
+}
+
+.reactions button.add-reaction .emoji {
+  margin-left: 3px;
+  margin-right: 0px;
+}
+
+.reactions ul {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: -45px;
+  background-color: white !important;
+}
+
+.reactions ul li {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0px 5px;
+  opacity: 0.7;
+}
+
+.reactions ul li:hover {
+  opacity: 1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
