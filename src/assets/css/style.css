@@ -331,6 +331,54 @@ li:not(:last-of-type)::after {
   perspective: 1000px;
 }
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+/* POSTS */
+.post-list {
+  margin-top: 20px;
+}
+
+.post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px 10px;
+  padding-bottom: 7px;
+  box-shadow: 2px 2px 1px rgba(136, 136, 136, 0.09);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 820px) {
+  .post {
+    padding: 0;
+  }
+}
+
+.post .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  flex: 1 1 15%;
+  margin-right: 5px;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
