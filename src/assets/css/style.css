@@ -379,6 +379,58 @@ li:not(:last-of-type)::after {
   margin-right: 5px;
 }
 
+.post .user-info > * {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 820px) {
+  .post .user-info {
+    order: -2;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: rgba(73, 89, 96, 0.06);
+    margin-right: 0;
+    padding: 5px;
+    padding-left: 10px;
+  }
+
+  .post .user-info .avatar-large {
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    order: 1;
+  }
+
+  .post .user-info .user-name {
+    order: 2;
+  }
+
+  .post .user-info > * {
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+}
+
+.post .post-date {
+  flex-basis: 100%;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 5px;
+  padding-right: 7px;
+}
+
+@media (max-width: 820px) {
+  .post .post-date {
+    order: -1;
+    order: -1;
+    flex-basis: 40%;
+    background: rgba(73, 89, 96, 0.06);
+    padding-right: 10px;
+    padding-top: 16px;
+    margin-bottom: 0px;
+  }
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
