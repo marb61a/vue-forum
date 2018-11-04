@@ -220,6 +220,30 @@ li:not(:last-of-type)::after {
   margin-right: 10px;
 }
 
+.thread-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* REACTIONS */
+.reactions {
+  display: flex;
+  justify-content: flex-end;
+  flex: 100%;
+  position: relative;
+}
+
+.reactions button {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  margin-left: 2px;
+  color: #545454;
+  border-radius: 5px;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
