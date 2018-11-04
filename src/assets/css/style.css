@@ -289,6 +289,48 @@ li:not(:last-of-type)::after {
   cursor: pointer;
 }
 
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #838486;
+}
+
+.pagination button {
+  background: #95cbb7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+  padding: 0px;
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+}
+
+.pagination button:hover {
+  background: #57AD8D;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+}
+
+.pagination button:disabled:hover {
+  background: #95cbb7;
+}
+
+.pagination button:disabled:active {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
