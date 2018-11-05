@@ -718,6 +718,49 @@ li:not(:last-of-type)::after {
   padding: 0;
 }
 
+@media (max-width: 720px) {
+  .activity-list .activity .activity-header .title {
+      flex-basis: 100%;
+  }
+}
+
+.activity-list .activity .activity-header .title span {
+  display: block;
+  font-weight: 100;
+}
+
+.activity-list .activity div.post-content {
+  display: block;
+  padding-right: 10px;
+  margin: 12px 0px;
+  word-break: break-word;
+}
+
+.activity-list .activity div.post-content p {
+  margin-bottom: 12px;
+}
+
+.activity-list .activity .thread-details {
+  text-align: right;
+}
+
+.activity-list .activity .thread-details span:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+textarea#user_bio {
+  resize: vertical;
+}
+
+
+/* SPAN */
+span.offline::before {
+  font-family: FontAwesome;
+  content: "\f1db";
+  font-size: 14px;
+  margin-right: 5px;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
