@@ -627,6 +627,53 @@ li:not(:last-of-type)::after {
 }
 
 
+/* PROFILE CARD */
+.profile-card {
+  padding: 10px 20px 20px 20px;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: 2px 2px 1px rgba(136, 136, 136, 0.09);
+  align-self: self-end;
+}
+
+@media (min-width: 820px) {
+  .profile-card {
+    margin-right: 20px;
+  }
+}
+
+.profile-card .title {
+  word-break: break-all;
+}
+
+.profile-card .stats {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.profile-card .stats span {
+  flex-basis: 50%;
+}
+
+.profile-card .user-website {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.profile-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 0px;
+}
+
+@media (max-width: 720px) {
+  .profile-header {
+      flex-wrap: wrap;
+  }
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
