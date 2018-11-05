@@ -674,6 +674,50 @@ li:not(:last-of-type)::after {
   }
 }
 
+/* ACTIVITY LIST */
+@media (min-width: 1024px) {
+  .activity-list {
+    padding: 0px 10px;
+  }
+}
+
+.activity-list .activity {
+  background-color: white;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 1px rgba(136, 136, 136, 0.09);
+}
+
+@media (max-width: 720px) {
+  .activity-list .activity {
+      padding: 10px 15px;
+  }
+
+  .activity-list .activity .post-content {
+      padding-left: 0;
+  }
+}
+
+.activity-list .activity .activity-header {
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.activity-list .activity .activity-header img {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.activity-list .activity .activity-header .title {
+  flex-basis: 93%;
+  margin: 0;
+  padding: 0;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
