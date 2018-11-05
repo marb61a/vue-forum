@@ -431,6 +431,48 @@ li:not(:last-of-type)::after {
   }
 }
 
+@media (max-width: 720px) {
+  .post {
+    padding: 0px;
+  }
+}
+
+.post-content {
+  display: flex;
+  flex: 1 0 83%;
+  padding-left: 15px;
+  padding-right: 10px;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  margin-bottom: 0;
+}
+
+.post-content p {
+  margin-bottom: 20px;
+}
+
+.post-content pre {
+  display: grid;
+  overflow: auto;
+  word-wrap: break-word;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.post-content blockquote {
+  margin: 25px 0px;
+}
+
+.post-content blockquote.big {
+  display: flex;
+  position: relative;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
