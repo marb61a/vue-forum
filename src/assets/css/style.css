@@ -761,6 +761,50 @@ span.offline::before {
   margin-right: 5px;
 }
 
+span.online {
+  color: #57AD8D;
+}
+
+span.online::before {
+  font-family: FontAwesome;
+  content: "\f2be";
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #263959;
+  height: 80px;
+  padding: 0 20px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 60px
+  }
+}
+
+
+/* LOGO */
+.logo {
+  float: left;
+  padding-top: 5px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .logo {
+    padding-top: 10px;
+  }
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
