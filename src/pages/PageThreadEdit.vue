@@ -7,7 +7,7 @@
       :text="text"
       @save="save"
       @cancel="cancel"
-    >
+    />
   </div>
 </template>
 

@@ -34,7 +34,17 @@ export default {
     }
   },
   created () {
+    NProgress.configure({
+      speed: 200,
+      showSpinner: false
+    })
+    NProgress.start()
 
+    this.$router.forEach((to, from, next) => {
+      this.showPage = false
+        NProgress.start()
+        next()
+    })
   }
 }
 </script>

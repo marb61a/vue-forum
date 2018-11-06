@@ -30,7 +30,7 @@
           :post="post"
           @save="editing = false"
           @cancel="editing = false"
-        >
+        />
       </div>
     </div>
     <div class="post-date text-faded">
