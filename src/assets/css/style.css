@@ -805,6 +805,48 @@ span.online::before {
   }
 }
 
+.svg-logo {
+  height: 62px;
+  width: 56px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .svg-logo {
+    height: 45px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 400px) {
+  .svg-logo {
+    height: 40px;
+    width: 35px;
+  }
+}
+
+.wrap-right {
+  float: right;
+  padding: 10px 10px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .wrap-right {
+      padding: 16px 0;
+  }
+}
+
+
+/* TEXT AND HEADINGS*/
+.text-faded, .forum-stats ul li, .thread-list .thread .created_at, 
+.post-content blockquote.big .author span.time, 
+.post-content blockquote.small .author .time, 
+.post-content blockquote.simple .author, 
+.activity-list .activity .activity-header .title span, 
+.activity-list .activity .thread-details, span.offline {
+  color: rgba(84, 84, 84, 0.7);
+}
+
+
 /* NAVBAR */
 .navbar {
   width: 100%;
