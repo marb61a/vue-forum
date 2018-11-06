@@ -990,6 +990,32 @@ ul.breadcrumbs li {
   text-decoration: underline;
 }
 
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-center, .profile-card .stats span, .profile-card .user-website {
+  text-align: center;
+}
+
+.text-left, .activity-list .activity .activity-header .title {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
 /* NAVBAR */
 .navbar {
   width: 100%;
