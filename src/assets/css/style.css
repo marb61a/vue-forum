@@ -899,6 +899,53 @@ ul.breadcrumbs li, .text-large, .list-title, .forum-stats ul li,
   line-height: 1.5;
 }
 
+@media (min-width: 240px) and (max-width: 720px) {
+  .text, p, .text-xsmall, .thread-list .thread .created_at, .pagination,
+  .post-content blockquote.small .author .time,
+  .post-content blockquote.simple .author .time,
+  .activity-list .activity .thread-details, span.offline, span.online,
+  .btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after,
+  .text-small, .forum-list .forum-listing .forum-details ul.subforums,
+  .post-content blockquote.big .author,
+  .post-content blockquote.small .author a,
+  .post-content blockquote.simple .author,
+  .activity-list .activity .activity-header .title span, .btn-small,
+  ul.breadcrumbs li, .text-large, .list-title, .forum-stats ul li,
+  .profile-card .user-website, .activity-list .activity .activity-header .title,
+  .btn-large, .text-xlarge, .btn-xlarge, .btn, .btn-blue, .btn-blue-outlined,
+  .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red,
+  .btn-red-outlined, .btn-ghost {
+    font-size: 15px;
+  }
+}
+
+.text-xsmall, .thread-list .thread .created_at, .pagination,
+.post-content blockquote.small .author .time,
+.post-content blockquote.simple .author .time,
+.activity-list .activity .thread-details, span.offline, span.online,
+.btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after {
+  font-size: 13px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .text-xsmall, .thread-list .thread .created_at, .pagination,
+  .post-content blockquote.small .author .time,
+  .post-content blockquote.simple .author .time,
+  .activity-list .activity .thread-details, span.offline, span.online,
+  .btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after {
+    font-size: 12px;
+  }
+}
+
+.text-small, .forum-list .forum-listing .forum-details ul.subforums,
+.post-content blockquote.big .author,
+.post-content blockquote.small .author a,
+.post-content blockquote.simple .author,
+.activity-list .activity .activity-header .title span, .btn-small,
+ul.breadcrumbs li {
+  font-size: 15px;
+}
+
 /* NAVBAR */
 .navbar {
   width: 100%;
