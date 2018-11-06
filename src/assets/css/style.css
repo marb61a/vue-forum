@@ -876,7 +876,7 @@ h2 {
 @media (min-width: 240px) and (max-width: 720px) {
   .text-lead, .forum-list .forum-listing .threads-count .count,
   .profile-card .stats span, .modal-container .modal .modal-header .title {
-      font-size: 22px;
+    font-size: 22px;
   }
 }
 
@@ -944,6 +944,50 @@ ul.breadcrumbs li, .text-large, .list-title, .forum-stats ul li,
 .activity-list .activity .activity-header .title span, .btn-small,
 ul.breadcrumbs li {
   font-size: 15px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .text-small, .forum-list .forum-listing .forum-details ul.subforums,
+  .post-content blockquote.big .author,
+  .post-content blockquote.small .author a,
+  .post-content blockquote.simple .author,
+  .activity-list .activity .activity-header .title span, .btn-small,
+  ul.breadcrumbs li {
+    font-size: 14px;
+  }
+}
+
+.text-large, .list-title, .forum-stats ul li, .profile-card .user-website,
+.activity-list .activity .activity-header .title, .btn-large {
+  font-size: 18px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .text-large, .list-title, .forum-stats ul li, .profile-card .user-website, .activity-list .activity .activity-header .title, .btn-large {
+    font-size: 17px;
+  }
+}
+
+.text-xlarge, .btn-xlarge {
+  font-size: 22px;
+}
+
+@media (min-width: 240px) and (max-width: 720px) {
+  .text-xlarge, .btn-xlarge {
+    font-size: 20px;
+  }
+}
+
+.text-bold, .activity-list .activity .activity-header .title {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-underline {
+  text-decoration: underline;
 }
 
 /* NAVBAR */
