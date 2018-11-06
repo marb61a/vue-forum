@@ -1,5 +1,5 @@
+import firebase from 'firebase'
 import {helpers as vuelidateHelpers} from 'vuelidate/lib/validators'
-import { resolve } from 'url'
 
 export const uniqueUsername = (value) => {
   if (!vuelidateHelpers.req(value)) {
@@ -7,7 +7,10 @@ export const uniqueUsername = (value) => {
   }
 
   return new Promise((resolve, reject) => {
-
+    firebase.database().ref('users')
+      .orderByChild('usernameLower')
+      .equalTo(value.toLowerCase())
+      .once('value', snapshot => resolve(!snapshot.exists()))
   })
 }
 
@@ -39,6 +42,9 @@ export const uniqueEmail = (value) => {
   }
 
   return new Promise((resolve, reject) => {
-
+    firebase.database().ref('users')
+      .orderByChild('email')
+      .equalTo(value.toLowerCase())
+      .once('value', snapshot => resolve(!snapshot.exists()))
   })
 }

@@ -42,8 +42,8 @@ export default {
 
     this.$router.forEach((to, from, next) => {
       this.showPage = false
-        NProgress.start()
-        next()
+      NProgress.start()
+      next()
     })
   }
 }
@@ -51,7 +51,7 @@ export default {
 
 <style>
   @import "assets/css/style.css";
-  @import "~nprogress/nprogress.css";
+  @import "nprogress/nprogress.css";
 
   #nprogress .bar {
     background: #57AD8D;

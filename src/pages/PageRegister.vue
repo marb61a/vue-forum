@@ -113,71 +113,71 @@
 </template>
 
 <script>
-  import {required, email, minLength, url} from 'vuelidate/lib/validators'
-  import {
-    uniqueEmail, uniqueUsername, responseOk, supportedImageFile
-  } from '@/utils/validators'
+import {required, email, minLength, url} from 'vuelidate/lib/validators'
+import {
+  uniqueEmail, uniqueUsername, responseOk, supportedImageFile
+} from '@/utils/validators'
 
-  export default {
-    data () {
-      return {
-        form: {
-          name: null,
-          username: null,
-          email: null,
-          password: null,
-          avatar: null
-        }
-      }
-    },
-    validations: {
+export default {
+  data () {
+    return {
       form: {
-        name: {
-          required
-        },
-        username: {
-          required,
-          unique: uniqueUsername
-        },
-        email: {
-          required,
-          email,
-          unique: uniqueEmail
-        },
-        password: {
-          required,
-          minLength: minLength(6)
-        },
-        avatar: {
-          url,
-          supportedImageFile,
-          responseOk
-        }
+        name: null,
+        username: null,
+        email: null,
+        password: null,
+        avatar: null
       }
-    },
-    methods: {
-      register () {
-        this.$v.form.$touch()
-        if (this.$v.form.$invalid) {
-          return
-        }
-
-        this.$store.dispatch('auth/registerUserWithEmailAndPassword', this.form)
-          .then(() => this.successRedirect())
-      },
-      registerWithGoogle () {
-        this.$store.dispatch('auth/signInWithGoogle')
-          .then(() => this.successRedirect())
-      },
-      successRedirect () {
-        const redirectTo = this.$route.query.redirectTo || {name: 'Home'}
-        this.$router.push(redirectTo)
-      }
-    },
-    created () {
-      this.$emit('ready')
     }
+  },
+  validations: {
+    form: {
+      name: {
+        required
+      },
+      username: {
+        required,
+        unique: uniqueUsername
+      },
+      email: {
+        required,
+        email,
+        unique: uniqueEmail
+      },
+      password: {
+        required,
+        minLength: minLength(6)
+      },
+      avatar: {
+        url,
+        supportedImageFile,
+        responseOk
+      }
+    }
+  },
+  methods: {
+    register () {
+      this.$v.form.$touch()
+      if (this.$v.form.$invalid) {
+        return
+      }
+
+      this.$store.dispatch('auth/registerUserWithEmailAndPassword', this.form)
+        .then(() => this.successRedirect())
+    },
+    registerWithGoogle () {
+      this.$store.dispatch('auth/signInWithGoogle')
+        .then(() => this.successRedirect())
+    },
+    successRedirect () {
+      const redirectTo = this.$route.query.redirectTo || {name: 'Home'}
+      this.$router.push(redirectTo)
+    }
+  },
+  created () {
+    this.$emit('ready')
   }
+}
 </script>
 
 <style scoped>

@@ -52,8 +52,8 @@ export default {
   created () {
     this.fetchForum({id: this.id})
       .then(forum => this.fetchThreads({ids: forum.threads}))
-      .then(threads => Promise.all(threads.map
-        (thread => this.fetchUser({id: thread.userId}))
+      .then(threads => Promise.all(threads.map(
+        thread => this.fetchUser({id: thread.userId}))
       ))
       .then(() => { this.asyncDataStatus_fetched() })
   }

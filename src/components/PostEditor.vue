@@ -40,7 +40,7 @@ export default {
         if (!textIsValid) {
           console.error('The post prop object must include a `text` attribute.')
         }
-        if (!key.keyIsValid) {
+        if (!keyIsValid) {
           console.error('The post prop object must include a `.key` attribute.')
         }
 

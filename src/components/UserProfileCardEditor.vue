@@ -129,7 +129,7 @@ export default {
     }
   },
   valiations: {
-    activeUser : {
+    activeUser: {
       name: {
         required
       },

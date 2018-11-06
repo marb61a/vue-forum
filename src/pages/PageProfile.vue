@@ -29,7 +29,7 @@ import {mapGetters} from 'vuex'
 import asyncDataStatus from '@/mixins/asyncDataStatus'
 
 export default {
-  components:{
+  components: {
     PostList,
     UserProfileCard,
     UserProfileCardEditor

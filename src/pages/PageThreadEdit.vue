@@ -37,8 +37,8 @@ export default {
     },
     hasUnsavedChanges () {
       // Automatically becomes false when thread is updated
-      return this.$refs.editor.form.title !== this.thread.title
-      || this.$refs.editor.form.text !== this.text
+      return this.$refs.editor.form.title !== this.thread.title ||
+      this.$refs.editor.form.text !== this.text
     }
   },
   methods: {

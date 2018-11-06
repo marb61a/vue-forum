@@ -14,6 +14,7 @@ export default {
   components: {
     CategoryList
   },
+  mixins: [asyncDataStatus],
   computed: {
     categories () {
       return Object.values(this.$store.state.categories.items)

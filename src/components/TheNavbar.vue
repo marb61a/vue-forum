@@ -63,20 +63,20 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+import {mapGetters} from 'vuex'
 
-  export default {
-    data () {
-      return {
-        userDropdownOpen: false
-      }
-    },
-    computed: {
-      ...mapGetters({
-        'user': 'auth/authUser'
-      })
+export default {
+  data () {
+    return {
+      userDropdownOpen: false
     }
+  },
+  computed: {
+    ...mapGetters({
+      'user': 'auth/authUser'
+    })
   }
+}
 </script>
 
 <style scoped>
